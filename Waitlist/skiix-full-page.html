@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/jpeg" href="skiix-logo.jpeg">
+<title>Skiix</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --black: #08090C;
+    --card: #121319;
+    --card-border: #1E2029;
+    --blue-deep: #5B8FFF;
+    --blue-light: #C7DBFF;
+    --near-white: #F3F6FF;
+    --text-dim: #8890A0;
+  }
+
+  body {
+    background: var(--black);
+    color: var(--near-white);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  section { position: relative; }
+
+  /* ---------- shared section label ---------- */
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border: 1px solid var(--card-border);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 8vw;
+  }
+  .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+  }
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--card-border);
+    padding: 6px 10px;
+    border-radius: 100px;
+  }
+
+  /* ---------- 1. what is skiix ---------- */
+  .what {
+    padding: 40px 8vw 100px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .what h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 6vw, 68px);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    max-width: 16ch;
+  }
+  .what h1 .accent { color: var(--blue-deep); }
+
+  .what p {
+    margin-top: 22px;
+    font-size: clamp(15px, 1.6vw, 18px);
+    color: var(--text-dim);
+    max-width: 56ch;
+    line-height: 1.6;
+  }
+
+  .pillars {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    width: 100%;
+    max-width: 900px;
+    text-align: left;
+  }
+  .pillar {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .pillar .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--blue-deep);
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+  .pillar h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .pillar p {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    line-height: 1.55;
+    margin: 0;
+    max-width: none;
+  }
+
+  /* ---------- 2. waitlist ---------- */
+  .waitlist {
+    padding: 20px 8vw 120px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .waitlist h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(26px, 3.4vw, 34px);
+    letter-spacing: -0.02em;
+  }
+  .waitlist h2 .accent { color: var(--blue-deep); }
+
+  .waitlist .sub {
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--text-dim);
+    max-width: 40ch;
+    line-height: 1.5;
+  }
+
+  .capture {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .field {
+    width: 100%;
+    height: 54px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    color: var(--near-white);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    padding: 0 16px;
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  .field::placeholder { color: var(--text-dim); }
+  .field:focus { border-color: var(--blue-deep); }
+
+  #joinBtn {
+    width: 100%;
+    height: 54px;
+    background: var(--near-white);
+    color: #060709;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+  #joinBtn:hover { background: var(--blue-deep); color: var(--near-white); }
+  #joinBtn:active { transform: scale(0.98); }
+  #joinBtn:disabled { opacity: 0.5; cursor: default; }
+
+  .status {
+    margin-top: 16px;
+    font-size: 14px;
+    min-height: 20px;
+  }
+  .status.ok { color: var(--blue-deep); }
+  .status.err { color: #ff6b6b; }
+
+  /* ---------- 3. meet the team ---------- */
+  .team {
+    padding: 20px 8vw 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .team-head {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .team-head h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 42px);
+    letter-spacing: -0.02em;
+  }
+
+  .grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 28px 24px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(.2,.8,.2,1), border-color 0.35s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(91,143,255,0.5);
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--blue-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #060709;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .role {
+    font-size: 14px;
+    color: var(--blue-light);
+    font-weight: 500;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-tag {
+    font-size: 12px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px 6vw 40px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #3a3d47;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 480px) {
+    .what { padding: 30px 6vw 80px; }
+    .waitlist { padding: 10px 6vw 90px; }
+    .team { padding: 10px 6vw 90px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">Skiix</div>
+  <div class="tag">Launching Mid-Aug 2026</div>
+</div>
+
+<!-- 1. WHAT IS SKIIX -->
+<section class="what">
+  <span class="eyebrow">What is Skiix</span>
+  <h1>The <span class="accent">next generation</span> of social media.</h1>
+  <p>Skiix is a new gen social platform built from the ground up, not bolted onto the old model. Same idea as social media, none of the baggage. No inherited habits, no legacy features carried over just because that's how it's always been done. Built the way social media should've started in the first place.</p>
+</section>
+
+<!-- 2. WAITLIST -->
+<section class="waitlist">
+  <span class="eyebrow">Join the waitlist</span>
+  <h2>Get early <span class="accent">access.</span></h2>
+  <p class="sub">We'll email you before launch. No spam, just the date.</p>
+
+  <form class="capture" id="waitlistForm" novalidate>
+    <input type="text" id="name" class="field" placeholder="Your name" required autocomplete="name">
+    <input type="email" id="email" class="field" placeholder="you@email.com" required autocomplete="email">
+    <button type="submit" id="joinBtn">Join waitlist</button>
+    <div class="status" id="status"></div>
+  </form>
+</section>
+
+<!-- 3. MEET THE TEAM -->
+<section class="team">
+  <div class="team-head">
+    <h2>Meet the team</h2>
+  </div>
+
+  <div class="grid">
+    <div class="card founder">
+      <div class="avatar">A</div>
+      <div class="name">Ashhad Khan</div>
+      <div class="role">Founder & CEO</div>
+      <div class="card-tag">Runs the whole show</div>
+    </div>
+
+    <div class="card founder">
+      <div class="avatar">O</div>
+      <div class="name">Omer</div>
+      <div class="role">Co-founder · Graphic Design</div>
+      <div class="card-tag">Makes it look good</div>
+    </div>
+
+    <div class="card founder">
+      <div class="avatar">Z</div>
+      <div class="name">Zufar</div>
+      <div class="role">Co-founder · Graphic Design</div>
+      <div class="card-tag">Makes it look good</div>
+    </div>
+
+    <div class="card founder">
+      <div class="avatar">A</div>
+      <div class="name">Abdullah</div>
+      <div class="role">Co-founder · Social Media Manager</div>
+      <div class="card-tag">Runs @skiix__</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">F</div>
+      <div class="name">Furqan</div>
+      <div class="role">Full Stack Developer</div>
+      <div class="card-tag">Ships the app</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">L</div>
+      <div class="name">Luthfi</div>
+      <div class="role">Backend Developer</div>
+      <div class="card-tag">Keeps it running</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">M</div>
+      <div class="name">Micheal</div>
+      <div class="role">Frontend Developer</div>
+      <div class="card-tag">Builds what you see</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">J</div>
+      <div class="name">Juan</div>
+      <div class="role">UI/UX Designer</div>
+      <div class="card-tag">Designs the flow</div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">H</div>
+      <div class="name">Huzaifa</div>
+      <div class="role">QA Tester</div>
+      <div class="card-tag">Breaks it before you do</div>
+    </div>
+  </div>
+</section>
+
+<footer>SKIIX © 2026</footer>
+
+<script>
+  // ---- CONFIGURE THIS ----
+ const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbyTQ_wXlE0HsbPSA5uE-OJ_aZhtQwNtCvFVDHsZ0t5SboFpVkdUSjweXurnaj55JtVh/exec";
+  // ------------------------
+
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const form = document.getElementById('waitlistForm');
+  const btn = document.getElementById('joinBtn');
+  const status = document.getElementById('status');
+
+  function isValidEmail(v){
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+
+    if(!name){
+      status.textContent = 'Enter your name.';
+      status.className = 'status err';
+      return;
+    }
+    if(!isValidEmail(email)){
+      status.textContent = 'Enter a valid email.';
+      status.className = 'status err';
+      return;
+    }
+    if(SHEETS_ENDPOINT.includes('PASTE_YOUR')){
+      status.textContent = "Waitlist isn't connected yet — add your Apps Script URL in the code.";
+      status.className = 'status err';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Joining...';
+    status.textContent = '';
+    status.className = 'status';
+
+    try {
+      await fetch(SHEETS_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({ name, email, source: 'skiix-full-page', ts: new Date().toISOString() })
+      });
+
+      btn.textContent = "You're in";
+      status.textContent = "Locked in. We'll email you before launch.";
+      status.className = 'status ok';
+      form.reset();
+      nameInput.disabled = true;
+      emailInput.disabled = true;
+    } catch(err){
+      btn.disabled = false;
+      btn.textContent = 'Join waitlist';
+      status.textContent = 'Something broke. Try again.';
+      status.className = 'status err';
+    }
+  });
+</script>
+
+</body>
+</html>
