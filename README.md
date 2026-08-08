@@ -1,59 +1,33 @@
 # Skiix Waitlist
 
-Landing page for the Skiix waitlist — collects name and email, deployed as a static site, and writes submissions straight into a Google Sheet.
+The official pre-launch waitlist page for **Skiix** — a social media platform built for how people actually use their phones.
 
-**Live:** https://skiix-waitlist.vercel.app/
+Skiix isn't algorithm-free or ad-free — it's the same doomscroll world, just built with more control in your hands. Features like the Vibe Slider, Mood Feed, Focus Mode, and Discovery Shuffle let you shape your feed instead of just taking whatever's served.
 
-## Structure
+This repo hosts the waitlist landing page where people sign up to get early access at launch.
 
-```
-Skiix-Waitlist/
-├── Waitlist/        → site files (HTML/CSS/JS)
-└── README.md
-```
+## What's inside
 
-## What's on the page
+- Dark, minimal landing page (`Waitlist/`) — Skiix brand palette, blue-to-white gradient accents on black
+- Email capture form connected to Google Sheets via Google Apps Script
+- Deployed live on Vercel
 
-- **What is Skiix** — short intro to the product
-- **Waitlist form** — name + email capture
-- **Meet the team** — team grid
+## Tech
 
-## Stack
+- HTML / CSS / JS (no framework)
+- Google Apps Script → Google Sheets for email capture
+- Hosted on Vercel
 
-- Plain HTML/CSS/JS — no framework, no build step
-- Fonts: Space Grotesk, Inter, IBM Plex Mono (Google Fonts)
-- Form submissions handled by a Google Apps Script Web App, writing directly to a Google Sheet
+## Brand
 
-## Design
+- Background: `#08090C`
+- Accent blue: `#5B8FFF`
+- Type: Space Grotesk / Inter / IBM Plex Mono
 
-Flat black background, no gradients, blue accent (`#5B8FFF`), no filler copy.
+## Status
 
-## Setup — connecting the form to Google Sheets
-
-1. Open the target Google Sheet → **Extensions → Apps Script**
-2. Paste in the Apps Script code (see `apps-script.gs`)
-3. **Deploy → New deployment → Web app**
-   - Execute as: **Me**
-   - Who has access: **Anyone**
-4. Authorize the script when prompted (click through the "unverified app" warning — it's your own script)
-5. Copy the deployment URL (ends in `/exec`)
-6. In the HTML file, find:
-   ```js
-   const SHEETS_ENDPOINT = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
-   ```
-   and replace the placeholder with your deployment URL
-
-Submissions land in the sheet as: **Name | Email | Timestamp**
-
-## Deploying on Vercel
-
-Vercel serves whatever's at the repo root — since the site currently lives inside `Waitlist/`, do one of the following:
-
-- **Option A:** Move the HTML file (renamed to `index.html`) to the repo root
-- **Option B:** In Vercel → Project Settings → General → set **Root Directory** to `Waitlist`, and make sure the file inside is named `index.html`
-
-Either fixes the `404: NOT_FOUND` error on the deployed URL.
+Pre-launch. Skiix is targeting a mid-August 2026 launch with a live waitlist.
 
 ## Team
 
-Built by the Skiix team — Ashhad Khan (Founder & CEO), Omer & Zufar (Design), Abdullah (Social), Furqan, Luthfi, Micheal, Juan, Huzaifa.
+Built by the Skiix founding team — Ashhad Khan (Founder & CEO), Omer & Zufar (Co-founders, Design), Abdullah (Co-founder, Social), and the dev/design crew: Furqan, Luthfi, Micheal, Juan, Huzaifa, Dominik.
