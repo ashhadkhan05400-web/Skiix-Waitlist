@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skiix — Early Access</title>
+  <meta name="description"
+    content="Skiix is a new social platform built without the noise. Join the waitlist for early access.">
+  <link rel="icon" type="image/jpeg" href="skiix-logo.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --surface: #F8FBFF;
+      --border: #D6E4F7;
+      --text: #0F172A;
+      --muted: #64748B;
+      --accent: #E7F1FF;
+      --accent-dark: #1E3A8A;
+    }
+
+    .person .img-placeholder {
+      width: 72px;
+      height: 72px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      overflow: hidden;
+    }
+
+    .person .img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 50%;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      row-gap: 10px;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-dark);
+    }
+
+    .nav-cta {
+      background: var(--accent) !important;
+      color: var(--accent-dark) !important;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      border: 1px solid var(--border);
+    }
+
+    .nav-cta:hover {
+      background: #d6e8ff !important;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 70px 0 80px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: clamp(30px, 8vw, 52px);
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+      padding: 0 4px;
+    }
+
+    .hero h1 span {
+      color: #FFFFFF;
+      background: linear-gradient(135deg, #6B9AFF 0%, #4A7AF0 100%);
+      padding: 2px 12px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(91, 143, 255, 0.35);
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      padding: 0 8px;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 4px;
+    }
+
+    .form input {
+      height: 50px;
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 16px;
+      padding: 0 16px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .form input:focus {
+      border-color: #93C5FD;
+    }
+
+    .form input::placeholder {
+      color: var(--muted);
+    }
+
+    .form button {
+      height: 50px;
+      background: var(--accent);
+      color: var(--accent-dark);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .form button:hover:not(:disabled) {
+      background: #d6e8ff;
+    }
+
+    .form button:active:not(:disabled) {
+      transform: scale(0.98);
+    }
+
+    .form button:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .status {
+      font-size: 14px;
+      min-height: 20px;
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    .status.ok {
+      color: var(--accent-dark);
+    }
+
+    .status.err {
+      color: #DC2626;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: clamp(20px, 5vw, 24px);
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+      text-align: center;
+      color: var(--accent-dark);
+    }
+
+    /* Team */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+
+    .waitlist-eyebrow {
+      display: inline-block;
+      margin: 0 auto 24px;
+      padding: 8px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: #94A3B8;
+    }
+
+    .waitlist-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 7vw, 48px);
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .waitlist-heading span {
+      background: linear-gradient(135deg, #6B9AFF 0%, #4A7AF0 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      margin-top: -10px;
+    }
+
+    .waitlist-subheading {
+      font-size: 16px;
+      color: #94A3B8;
+      max-width: 420px;
+      margin: 0 auto 36px;
+      line-height: 1.5;
+      padding: 0 8px;
+    }
+
+    .person {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 12px;
+      text-align: center;
+    }
+
+    .person .img-placeholder {
+      width: 72px;
+      height: 72px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin: 0 auto 14px;
+    }
+
+    .person .name {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    .person .role {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Social */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--accent);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+
+    .social-links a:hover {
+      background: #d6e8ff;
+    }
+
+    .social-links a svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--accent-dark);
+      flex-shrink: 0;
+    }
+
+    footer {
+      padding: 40px 0 50px;
+      font-size: 12px;
+      color: #94A3B8;
+      text-align: center;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 640px) {
+      .wrap {
+        padding: 0 16px;
+      }
+
+      nav {
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 10px 16px;
+        width: 100%;
+      }
+
+      .hero {
+        padding: 40px 0 60px;
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .social-links a {
+        flex: 1 1 auto;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav-links {
+        gap: 8px 12px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- NAV -->
+    <nav>
+      <a href="#" class="nav-logo">Skiix</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="feature.html">Features</a></li>
+        <li><a href="#herf" class="nav-cta">Join Waitlist</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <br>
+      <div class="waitlist-eyebrow" style="margin-bottom: -20px;">WHAT IS SKIIX</div>
+      <h1 style="margin-top: 30px;">The <span>next generation</span> of social media.</h1>
+      <br>
+      <p>Skiix is a new gen social platform built from the ground up, not bolted onto the old model. Same idea as social
+        media, none of the baggage. No inherited habits, no legacy features carried over just because that's how it's
+        always been done. Built the way social media should've started in the first place.</p>
+      <br> <br><br>
+      <form class="form" id="waitlistForm" novalidate>
+        <div id="herf" class="waitlist-eyebrow" style="margin-bottom: -20px;">JOIN THE WAITLIST</div>
+        <h2 class="waitlist-heading"><span>Get early access.</span></h2>
+        <p class="waitlist-subheading">We'll email you before launch. No spam, just the date.</p>
+        <input type="text" id="name" placeholder="Your name" required autocomplete="name">
+        <input type="email" id="email" placeholder="You@email.com" required autocomplete="email">
+        <button type="submit" id="joinBtn">Join the waitlist</button>
+        <div class="status" id="status"></div>
+      </form>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team">
+      <h2 class="section-title">Meet the team</h2>
+      <div class="team-grid">
+        <div class="person">
+          <div class="img-placeholder"><img src="./img/ash.jpeg" alt=""></div>
+          <div class="name">Ashhad</div>
+          <div class="role">Founder & CEO</div>
+        </div>
+        <div class="person">
+          <div class="img-placeholder"><img src="./img/omer.jpeg" alt=""></div>
+          <div class="name">Omer</div>
+          <div class="role">Co-founder · Graphic Designer</div>
+        </div>
+        <div class="person">
+          <div class="img-placeholder"><img src="./img/zufar.jpeg" alt=""></div>
+          <div class="name">Zufar</div>
+          <div class="role">Co-founder · Graphic Designer & Video Editor</div>
+        </div>
+           <div class="person">
+          <div class="img-placeholder"><img src="./img/Durrani.jpeg" alt=""></div>
+          <div class="name">Abdullah</div>
+          <div class="role">Co-founder · Social Media Manager</div>
+        </div>
+        <div class="person">
+          <div class="img-placeholder"><img src="./img/Dominik.jpeg" alt=""></div>
+          <div class="name">Dominik</div>
+          <div class="role">Social Media Manager</div>
+        </div>
+        <div class="person">
+          <div class="img-placeholder"><img src="./img/furqan.jpeg" alt=""></div>
+          <div class="name">Furqan</div>
+          <div class="role">Full Stack Developer</div>
+        </div>
+        <div class="person">
+          <div class="img-placeholder"><img src="./img/luthfi.jpeg" alt=""></div>
+          <div class="name">Luthfi</div>
+          <div class="role">Backend Developer</div>
+        </div>
+        <div class="person">
+          <div class="img-placeholder"><img src="./img/michea.jpeg" alt=""></div>
+          <div class="name">Micheal</div>
+          <div class="role">Frontend Developer</div>
+        </div>
+        <div class="person">
+          <div class="img-placeholder"><img src="./img/juan.jpeg" alt=""></div>
+          <div class="name">Juan</div>
+          <div class="role">UI/UX Designer</div>
+        </div>
+        <div class="person">
+          <div class="img-placeholder"><img src="./img/huazifa.jpeg" alt=""></div>
+          <div class="name">Huzaifa</div>
+          <div class="role">QA Tester</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section>
+      <h2 class="section-title">Follow the build</h2>
+      <div class="social-links">
+        <a href="https://www.instagram.com/skiix__/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.39C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.39 2.13.67.67 1.34 1.08 2.13 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.39.67-.67 1.08-1.34 1.39-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.39-2.13C21.32 1.35 20.65.94 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-10.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" />
+          </svg>
+          Instagram · @skiix__
+        </a>
+        <a href="https://x.com/skiix___" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+          X · @skiix___
+        </a>
+        <a href="https://www.linkedin.com/company/skiix1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+          LinkedIn · @skiix
+        </a>
+      </div>
+    </section>
+
+    <footer>© 2026 Skiix</footer>
+  </div>
+
+  <script>
+    // ========== LATEST ENDPOINT ==========
+    const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbz2J46N2qPk-bacy2tsPJOicCtoVL6Rt0FL0NJ4rO_EuSRWBrz1RLhP94-HLY3DnGCM/exec";
+
+    const form = document.getElementById('waitlistForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const btn = document.getElementById('joinBtn');
+    const status = document.getElementById('status');
+
+    function isValidEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+
+      if (!name) {
+        status.textContent = 'Please enter your name.';
+        status.className = 'status err';
+        return;
+      }
+      if (!isValidEmail(email)) {
+        status.textContent = 'Please enter a valid email.';
+        status.className = 'status err';
+        return;
+      }
+
+      // Instant success
+      btn.disabled = true;
+      btn.textContent = "You're on the list";
+      nameInput.value = ""
+      emailInput.value = ""
+      status.textContent = "We'll email you before launch. No spam.";
+      status.className = 'status ok';
+      nameInput.disabled = true;
+      emailInput.disabled = true;
+
+      // Send in background
+      try {
+        await fetch(SHEETS_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            source: 'skiix-waitlist',
+            ts: new Date().toISOString()
+          })
+        });
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Join the waitlist';
+        status.textContent = 'Something went wrong. Try again.';
+        status.className = 'status err';
+        nameInput.disabled = false;
+        emailInput.disabled = false;
+      }
+    });
+  </script>
+</body>
+
+</html>
