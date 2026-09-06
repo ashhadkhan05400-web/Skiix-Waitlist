@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skiix | Privacy Policy</title>
+<link rel="icon" type="image/jpeg" href="skiix-logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FFFFFF;
+    --bg-soft: #F5F7FF;
+    --line: #E7E9F0;
+    --text: #14161C;
+    --text-dim: #6B7080;
+    --blue: #5B8FFF;
+    --blue-deep: #3E6FE0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue-deep);}
+
+  header.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:24px 40px;
+    border-bottom:1px solid var(--line);
+  }
+  .logo{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    color:var(--text);
+    text-decoration:none;
+  }
+
+  header.hero{
+    padding:72px 40px 48px;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .kicker{
+    font-size:13px;
+    color:var(--text-dim);
+    letter-spacing:0.04em;
+    margin-bottom:20px;
+  }
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:clamp(36px, 5.5vw, 56px);
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+  h1 .highlight{
+    background:var(--blue);
+    color:#fff;
+    padding:2px 14px;
+    display:inline-block;
+    border-radius:4px;
+  }
+  .hero-meta{
+    margin-top:24px;
+    display:flex;
+    gap:28px;
+    font-size:14px;
+    color:var(--text-dim);
+  }
+  .hero-meta b{color:var(--text); font-weight:600;}
+  .hero-sub{
+    margin-top:20px;
+    max-width:60ch;
+    color:#3A3D47;
+    font-size:17px;
+  }
+
+  /* Illustration banner */
+  .banner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+  .banner-inner{
+    background:linear-gradient(120deg, #EAF0FF 0%, #F5F7FF 55%, #EFFBF5 100%);
+    border-radius:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:36px;
+    border:1px solid var(--line);
+  }
+  .banner-inner svg{width:100%; max-width:640px; height:auto;}
+
+  /* Topic cards grid */
+  .topics{
+    max-width:1180px;
+    margin:0 auto;
+    padding:56px 40px 8px;
+  }
+  .topics h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .topics p.lead{color:var(--text-dim); font-size:15px; margin-bottom:28px;}
+  .topic-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:16px;
+  }
+  .topic-card{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px;
+    text-decoration:none;
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    transition:border-color .15s ease, transform .15s ease;
+    flex:1 1 250px;
+    max-width:270px;
+  }
+  .topic-card:hover{border-color:var(--blue); transform:translateY(-2px);}
+  .topic-icon{
+    width:44px; height:44px;
+    border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .topic-card h3{font-size:15px; font-weight:600;}
+  .topic-card span{font-size:13px; color:var(--text-dim); line-height:1.5;}
+
+  .layout{
+    max-width:1180px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:64px;
+    padding:48px 40px 120px;
+    border-top:1px solid var(--line);
+    margin-top:48px;
+  }
+
+  nav.toc{
+    position:sticky;
+    top:32px;
+    align-self:start;
+    font-size:15px;
+    padding-top:40px;
+  }
+  nav.toc ol{list-style:none;}
+  nav.toc li{margin-bottom:2px;}
+  nav.toc a{
+    color:var(--text-dim);
+    text-decoration:none;
+    display:block;
+    padding:10px 14px;
+    border-radius:8px;
+  }
+  nav.toc a:hover{background:var(--bg-soft); color:var(--text);}
+  nav.toc a.active{background:var(--bg-soft); color:var(--blue-deep); font-weight:600;}
+
+  main{max-width:700px; padding-top:40px;}
+  section{
+    padding-bottom:48px;
+    margin-bottom:48px;
+    border-bottom:1px solid var(--line);
+  }
+  section:last-child{border-bottom:none;}
+  section h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:26px;
+    font-weight:600;
+    margin-bottom:16px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  section h2 .mini-icon{
+    width:32px; height:32px;
+    border-radius:9px;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  section h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:17px;
+    font-weight:600;
+    margin:24px 0 10px;
+  }
+  section p{color:#3A3D47; margin-bottom:14px; font-size:16px;}
+  section p:last-child{margin-bottom:0;}
+  section ul{margin:14px 0; padding-left:0; list-style:none;}
+  section li{
+    color:#3A3D47;
+    padding-left:24px;
+    position:relative;
+    margin-bottom:12px;
+    font-size:16px;
+  }
+  section li::before{
+    content:"";
+    position:absolute;
+    left:0; top:9px;
+    width:8px; height:8px;
+    border-radius:2px;
+    background:var(--blue);
+  }
+  section li b, section p b{color:var(--text); font-weight:600;}
+
+  .inline-illustration{
+    margin:0 0 40px;
+    border-radius:20px;
+    overflow:hidden;
+  }
+  .inline-illustration svg{width:100%; height:auto; display:block;}
+
+  table.data-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:18px 0;
+    font-size:14.5px;
+  }
+  table.data-table th, table.data-table td{
+    text-align:left;
+    padding:12px 14px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  table.data-table th{
+    color:var(--text-dim);
+    font-weight:600;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+  }
+
+  .contact-card{
+    margin-top:8px;
+    padding:24px;
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+  }
+  .contact-card a{font-weight:600;}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;}
+  @media(max-width:520px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-grid div{font-size:14px;}
+  .contact-grid div b{display:block; color:var(--text); margin-bottom:4px;}
+
+  footer{
+    max-width:1180px;
+    margin:0 auto;
+    padding:32px 40px;
+    color:var(--text-dim);
+    font-size:13px;
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:860px){
+    .layout{grid-template-columns:1fr; gap:24px; padding:32px 24px 80px;}
+    nav.toc{position:static; padding-top:16px; border-bottom:1px solid var(--line); padding-bottom:16px;}
+    header.hero{padding:56px 24px 40px;}
+    header.topbar{padding:20px 24px;}
+    .topics{padding:40px 24px 8px;}
+    .banner{padding:0 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="logo" href="https://skiix.app">Skiix</a>
+</header>
+
+<header class="hero">
+  <div class="kicker">SKIIX · LEGAL</div>
+  <h1>Privacy <span class="highlight">Policy</span></h1>
+  <p class="hero-sub">A full, plain-language breakdown of what Skiix collects, why, and how you stay in control of it.</p>
+  <div class="hero-meta">
+    <span>Applies to <b>skiix.app</b> and the Skiix app</span>
+  </div>
+</header>
+
+<div class="banner">
+  <div class="banner-inner">
+    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40" y="40" width="130" height="90" rx="16" fill="#DCE7FF"/>
+      <circle cx="105" cy="85" r="22" fill="#5B8FFF"/>
+      <path d="M96 85 l6 7 12 -14" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="470" y="30" width="130" height="90" rx="16" fill="#E4F7ED"/>
+      <rect x="505" y="55" width="60" height="44" rx="6" fill="#38B27A"/>
+      <circle cx="535" cy="77" r="10" fill="#fff"/>
+      <rect x="60" y="190" width="120" height="80" rx="16" fill="#FFF0DE"/>
+      <circle cx="120" cy="230" r="24" fill="#F2A73B"/>
+      <path d="M120 216 v14 l10 8" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <rect x="440" y="190" width="140" height="84" rx="16" fill="#F4EBFF"/>
+      <rect x="472" y="216" width="20" height="32" rx="4" fill="#9B6BFF"/>
+      <rect x="500" y="230" width="20" height="18" rx="4" fill="#C6ABFF"/>
+      <rect x="528" y="208" width="20" height="40" rx="4" fill="#9B6BFF"/>
+      <g>
+        <rect x="220" y="70" width="200" height="200" rx="28" fill="#EEF3FF" stroke="#DCE4FA" stroke-width="2"/>
+        <rect x="255" y="110" width="130" height="130" rx="18" fill="#FFFFFF" stroke="#D8E1FA" stroke-width="2"/>
+        <circle cx="320" cy="175" r="34" fill="#5B8FFF"/>
+        <path d="M320 155 a20 20 0 1 1 -0.1 0" stroke="#fff" stroke-width="5" fill="none"/>
+        <circle cx="320" cy="175" r="8" fill="#fff"/>
+        <rect x="300" y="252" width="40" height="6" rx="3" fill="#C6D4FA"/>
+      </g>
+      <rect x="60" y="60" width="8" height="8" rx="2" fill="#5B8FFF" opacity="0.5"/>
+      <rect x="560" y="150" width="8" height="8" rx="2" fill="#38B27A" opacity="0.5"/>
+      <circle cx="200" cy="250" r="5" fill="#F2A73B" opacity="0.6"/>
+      <circle cx="440" cy="70" r="5" fill="#9B6BFF" opacity="0.6"/>
+    </svg>
+  </div>
+</div>
+
+<div class="topics">
+  <h2>Privacy topics</h2>
+  <p class="lead">Jump to the section that answers what you're wondering about.</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="#info-we-collect">
+      <div class="topic-icon" style="background:#DCE7FF">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="#3E6FE0" stroke-width="2"/><path d="M3 8h18" stroke="#3E6FE0" stroke-width="2"/><circle cx="7" cy="6" r="0.5" fill="#3E6FE0"/></svg>
+      </div>
+      <h3>Info we collect</h3>
+      <span>Account details, content, and usage data.</span>
+    </a>
+    <a class="topic-card" href="#how-we-use">
+      <div class="topic-icon" style="background:#E4F7ED">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8L12 3z" stroke="#38B27A" stroke-width="2" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>How we use it</h3>
+      <span>Powering your feed, mood tools, and safety systems.</span>
+    </a>
+    <a class="topic-card" href="#your-choices">
+      <div class="topic-icon" style="background:#F4EBFF">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#9B6BFF" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="#9B6BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Your choices</h3>
+      <span>Editing, exporting, and deleting your data.</span>
+    </a>
+    <a class="topic-card" href="#security">
+      <div class="topic-icon" style="background:#FFE7EA">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6l7-3z" stroke="#E0576B" stroke-width="2" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Security</h3>
+      <span>How your data is protected on our end.</span>
+    </a>
+    <a class="topic-card" href="#your-rights">
+      <div class="topic-icon" style="background:#E4F4FB">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#2CA9CF" stroke-width="2"/><path d="M3 12h18M12 3a14 14 0 010 18 14 14 0 010-18z" stroke="#2CA9CF" stroke-width="2"/></svg>
+      </div>
+      <h3>Your rights</h3>
+      <span>Region-specific privacy rights, explained.</span>
+    </a>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc">
+    <ol>
+      <li><a href="#who-we-are">Who we are</a></li>
+      <li><a href="#info-we-collect">Info we collect</a></li>
+      <li><a href="#how-we-use">How we use it</a></li>
+      <li><a href="#legal-basis">Legal basis for processing</a></li>
+      <li><a href="#how-we-share">How we share it</a></li>
+      <li><a href="#cookies">Cookies &amp; tracking</a></li>
+      <li><a href="#your-choices">Your choices</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#retention">Data retention</a></li>
+      <li><a href="#international">International transfers</a></li>
+      <li><a href="#your-rights">Your rights by region</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#third-party-links">Third-party links</a></li>
+      <li><a href="#breach">Data breach notification</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="who-we-are">
+      <h2>Who we are</h2>
+      <p>Skiix is a mood-based social platform, built to make sharing feel intentional instead of compulsive. It exists because scrolling shouldn't feel like a chore or an addiction. Skiix uses mood tags, a Vibe Slider, and a Focus Mode to put you back in control of how you use social media.</p>
+      <p>This Privacy Policy explains, in detail, what data we collect across the Skiix app and skiix.app, why we collect it, who we share it with, and what rights and controls you have over it. It applies to anyone who creates a Skiix account, visits our waitlist site, or otherwise interacts with our services.</p>
+      <p>Skiix is operated by the Skiix team, based in Karachi, Pakistan. If anything here is unclear, reach out, contact details are at the bottom of this page.</p>
+    </section>
+
+    <div class="inline-illustration">
+      <svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="30" width="220" height="160" rx="20" fill="#F5F7FF" stroke="#E7E9F0" stroke-width="2"/>
+        <circle cx="90" cy="80" r="18" fill="#5B8FFF"/>
+        <rect x="120" y="70" width="100" height="10" rx="5" fill="#DCE4FA"/>
+        <rect x="120" y="88" width="70" height="10" rx="5" fill="#DCE4FA"/>
+        <rect x="50" y="120" width="170" height="12" rx="6" fill="#EAF0FF"/>
+        <rect x="50" y="142" width="130" height="12" rx="6" fill="#EAF0FF"/>
+        <rect x="50" y="164" width="150" height="12" rx="6" fill="#EAF0FF"/>
+        <rect x="310" y="30" width="220" height="160" rx="20" fill="#EFFBF5" stroke="#D8F0E4" stroke-width="2"/>
+        <circle cx="420" cy="110" r="42" fill="#38B27A"/>
+        <path d="M405 110l10 10 22 -24" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="365" y="165" width="110" height="10" rx="5" fill="#C9EBDA"/>
+      </svg>
+    </div>
+
+    <section id="info-we-collect">
+      <h2>Info we collect</h2>
+      <p>We collect information in three ways: what you give us directly, what we generate from your activity, and what comes in automatically from your device.</p>
+
+      <h3>Account information</h3>
+      <p>When you sign up, we collect your <b>email address</b>, a <b>username</b>, and a securely hashed <b>password</b> through Firebase Authentication. We never see or store your password in plain text. If you add a display name, profile photo, or bio, that's stored too.</p>
+
+      <h3>Content you create</h3>
+      <p>Anything you post, like text posts, mood tags, comments, direct messages, photos, and video, is stored so the app can function. Media files (photos and videos) are hosted through Cloudinary; everything else, including your post metadata and mood history, lives in our Supabase database.</p>
+
+      <h3>Usage &amp; behavioral data</h3>
+      <p>We log how you interact with the app: which moods you select, how you move the Vibe Slider, how long Focus Mode sessions last, what you scroll past versus linger on in Discovery Shuffle, and what you bookmark. This is what lets your feed actually reflect you instead of showing the same content to everyone.</p>
+
+      <h3>Device &amp; technical data</h3>
+      <p>We automatically collect basic technical details: device model, operating system and version, app version, general crash and performance logs, and IP-based approximate location (city/region level, not precise GPS unless you separately grant location permission for a specific feature).</p>
+
+      <table class="data-table">
+        <tr><th>Category</th><th>Examples</th><th>Source</th></tr>
+        <tr><td>Account</td><td>Email, username, password hash</td><td>You, at signup</td></tr>
+        <tr><td>Profile</td><td>Display name, bio, profile photo</td><td>You, anytime</td></tr>
+        <tr><td>Content</td><td>Posts, comments, DMs, media</td><td>You, when posting</td></tr>
+        <tr><td>Usage</td><td>Mood picks, Vibe Slider, Focus Mode time</td><td>Generated by app use</td></tr>
+        <tr><td>Device</td><td>OS, app version, crash logs</td><td>Automatic</td></tr>
+      </table>
+    </section>
+
+    <section id="how-we-use">
+      <h2>How we use it</h2>
+      <ul>
+        <li><b>Running the core app: authentication, your feed, direct messages, mood features, and everything that makes Skiix work day-to-day.</li>
+        <li><b>Personalizing your experience: shaping your feed, Discovery Shuffle, and Spark suggestions around what you actually engage with, not just what's popular.</li>
+        <li><b>Keeping the platform safe: automated and manual review to catch spam, abuse, impersonation, and policy violations before they spread.</li>
+        <li><b>Communicating with you: account verification, password resets, and security alerts, sent via our email provider Resend.</li>
+        <li><b>Improving Skiix: looking at aggregated, de-identified usage trends to understand what's working and decide what to build next. We don't use this to profile you individually outside the app experience.</li>
+        <li><b>Meeting legal obligations: responding to valid legal requests, enforcing our Terms, and protecting the rights and safety of our users.</li>
+      </ul>
+    </section>
+
+    <section id="legal-basis">
+      <h2>Legal basis for processing</h2>
+      <p>If you're in a region where this applies (like the EU/UK under GDPR), here's the legal basis we rely on for each type of processing:</p>
+      <ul>
+        <li><b>Contractual necessity: processing needed to create your account and deliver the core Skiix experience.</li>
+        <li><b>Legitimate interest: safety monitoring, spam prevention, and product improvement, balanced against your rights.</li>
+        <li><b>Consent: optional features like location-based content, which you can withdraw at any time.</li>
+        <li><b>Legal obligation: retaining certain records where the law requires it, such as responding to lawful requests from authorities.</li>
+      </ul>
+    </section>
+
+    <section id="how-we-share">
+      <h2>How we share it</h2>
+      <p>We do not sell your personal data to anyone, for any reason. We only share information in these specific cases:</p>
+      <ul>
+        <li><b>Infrastructure &amp; service providers: companies that run the technical plumbing behind Skiix, under contracts that limit what they can do with your data: Firebase (authentication), Supabase (database), Cloudinary (media hosting), Resend (transactional email).</li>
+        <li><b>Other Skiix users: limited strictly to what you choose to make public: your profile, posts, and comments.</li>
+        <li><b>Legal &amp; safety: law enforcement or regulators, only when we're legally compelled to, or when necessary to prevent harm, fraud, or violations of our Terms.</li>
+        <li><b>Business transfers: if Skiix is ever involved in a merger, acquisition, or sale of assets, your data may transfer as part of that deal, subject to the same privacy commitments described here.</li>
+      </ul>
+    </section>
+
+    <section id="cookies">
+      <h2>Cookies &amp; tracking technologies</h2>
+      <p>On skiix.app, we use a small number of cookies and similar technologies:</p>
+      <ul>
+        <li><b>Essential cookies: keep you logged in and remember basic site preferences. These can't be turned off without breaking core functionality.</li>
+        <li><b>Analytics cookies: help us understand aggregate site traffic (e.g., via Vercel Analytics or Google Search Console), never tied to your individual identity for marketing purposes.</li>
+      </ul>
+      <p>Most browsers let you block or delete cookies through their settings. Blocking essential cookies may prevent parts of skiix.app from working properly.</p>
+    </section>
+
+    <div class="inline-illustration">
+      <svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="30" width="440" height="140" rx="20" fill="#F4EBFF" stroke="#E7DCFA" stroke-width="2"/>
+        <circle cx="150" cy="100" r="34" fill="#9B6BFF"/>
+        <path d="M150 84v18l14 10" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <rect x="220" y="70" width="220" height="12" rx="6" fill="#DFCEFC"/>
+        <rect x="220" y="94" width="180" height="12" rx="6" fill="#DFCEFC"/>
+        <rect x="220" y="118" width="200" height="12" rx="6" fill="#DFCEFC"/>
+      </svg>
+    </div>
+
+    <section id="your-choices">
+      <h2>Your choices</h2>
+      <ul>
+        <li><b>Edit anytime: update your profile, posts, and account details directly in-app.</li>
+        <li><b>Download your data: request an export of your account and content data by contacting us.</li>
+        <li><b>Delete your account: permanently removes your profile and content from our active systems, subject to the retention exceptions in Section 10.</li>
+        <li><b>Manage notifications: control what Skiix emails or pushes you, from your account settings.</li>
+        <li><b>Ask us anything: reach out for a plain answer about what data we hold on you and why.</li>
+      </ul>
+    </section>
+
+    <section id="security">
+      <h2>Security</h2>
+      <p>We take reasonable technical and organizational measures to protect your data, including: encrypted authentication via Firebase, row-level security policies on our Supabase database restricting who can query what, secure SMTP with DKIM/SPF/DMARC for account emails, and access controls limiting which team members can reach production systems.</p>
+      <p>No system is perfectly secure, and we can't guarantee absolute protection against every possible attack, but we treat security as an ongoing responsibility, not a one-time setup.</p>
+    </section>
+
+    <section id="retention">
+      <h2>Data retention</h2>
+      <p>We keep your data for as long as your account is active. If you delete your account, we remove your profile and content from our active, user-facing systems.</p>
+      <p>Some data may be retained longer where necessary, for example, fraud-prevention logs, records needed to comply with a legal obligation, or backups that roll off on a fixed schedule rather than being individually purged on request.</p>
+    </section>
+
+    <section id="international">
+      <h2>International transfers</h2>
+      <p>Skiix's infrastructure providers (Firebase, Supabase, Cloudinary) operate data centers in multiple regions. As a result, your data may be processed or stored outside the country you live in, including in jurisdictions with different data protection laws than your own. Where required, we rely on our providers' standard contractual safeguards for these transfers.</p>
+    </section>
+
+    <section id="your-rights">
+      <h2>Your rights by region</h2>
+      <p><b>If you're in the EU/UK (GDPR):</b> you have the right to access, correct, delete, restrict, or port your data, and to object to certain types of processing. You can also lodge a complaint with your local data protection authority.</p>
+      <p><b>If you're in California (CCPA/CPRA):</b> you have the right to know what personal information we collect, to request deletion, to correct inaccurate data, and to opt out of the "sale" or "sharing" of personal information, though as noted, we don't sell your data.</p>
+      <p><b>If you're elsewhere:</b> we aim to honor the spirit of these rights for all Skiix users, regardless of location: access, correction, and deletion of your data. Contact us to exercise any of these.</p>
+    </section>
+
+    <section id="children">
+      <h2>Children's privacy</h2>
+      <p>Skiix isn't built for anyone under 13 (or the minimum age required in your country, if higher). We don't knowingly collect personal information from children below that age. If we learn we've inadvertently collected data from a child under the applicable minimum age, we'll delete it.</p>
+    </section>
+
+    <section id="third-party-links">
+      <h2>Third-party links</h2>
+      <p>Posts or profiles on Skiix may link out to third-party websites or services. We're not responsible for the privacy practices of those external sites, once you leave Skiix, their own privacy policy applies.</p>
+    </section>
+
+    <section id="breach">
+      <h2>Data breach notification</h2>
+      <p>In the unlikely event of a security incident that puts your personal data at risk, we'll notify affected users and relevant authorities as required by applicable law, without undue delay, along with clear guidance on what happened and what to do next.</p>
+    </section>
+
+    <section id="changes">
+      <h2>Changes to this policy</h2>
+      <p>Skiix is still evolving, and this policy will evolve with it. When we make material changes, we'll notify users through the app or by email, and update the "last reviewed" context on this page.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact us</h2>
+      <p>Questions about this policy, or want to exercise any of the rights described above?</p>
+      <div class="contact-card">
+        <div class="contact-grid">
+          <div><b>Privacy questions</b><a href="mailto:privacy@skiix.app">privacy@skiix.app</a></div>
+          <div><b>General support</b><a href="mailto:support@skiix.app">support@skiix.app</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>Skiix © 2026</footer>
+
+<script>
+  const links = document.querySelectorAll('nav.toc a');
+  const sections = document.querySelectorAll('main section');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const link = document.querySelector(`nav.toc a[href="#${e.target.id}"]`);
+      if(e.isIntersecting){
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => obs.observe(s));
+</script>
+
+</body>
+</html>
