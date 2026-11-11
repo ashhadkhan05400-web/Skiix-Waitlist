@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skiix | Terms of Use</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" type="image/jpeg" href="skiix-logo.jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FFFFFF;
+    --bg-soft: #F5F7FF;
+    --line: #E7E9F0;
+    --text: #14161C;
+    --text-dim: #6B7080;
+    --blue: #5B8FFF;
+    --blue-deep: #3E6FE0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue-deep);}
+
+  header.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:24px 40px;
+    border-bottom:1px solid var(--line);
+  }
+  .logo{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    color:var(--text);
+    text-decoration:none;
+  }
+
+  header.hero{
+    padding:72px 40px 48px;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .kicker{
+    font-size:13px;
+    color:var(--text-dim);
+    letter-spacing:0.04em;
+    margin-bottom:20px;
+  }
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:clamp(36px, 5.5vw, 56px);
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+  h1 .highlight{
+    background:var(--blue);
+    color:#fff;
+    padding:2px 14px;
+    display:inline-block;
+    border-radius:4px;
+  }
+  .hero-meta{
+    margin-top:24px;
+    display:flex;
+    gap:28px;
+    font-size:14px;
+    color:var(--text-dim);
+  }
+  .hero-meta b{color:var(--text); font-weight:600;}
+  .hero-sub{
+    margin-top:20px;
+    max-width:60ch;
+    color:#3A3D47;
+    font-size:17px;
+  }
+
+  .banner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+  .banner-inner{
+    background:linear-gradient(120deg, #EAF0FF 0%, #F5F7FF 55%, #FFF3E9 100%);
+    border-radius:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:36px;
+    border:1px solid var(--line);
+  }
+  .banner-inner svg{width:100%; max-width:640px; height:auto;}
+
+  .topics{
+    max-width:1180px;
+    margin:0 auto;
+    padding:56px 40px 8px;
+  }
+  .topics h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .topics p.lead{color:var(--text-dim); font-size:15px; margin-bottom:28px;}
+  .topic-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:16px;
+  }
+  .topic-card{
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px;
+    text-decoration:none;
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    transition:border-color .15s ease, transform .15s ease;
+    flex:1 1 250px;
+    max-width:270px;
+  }
+  .topic-card:hover{border-color:var(--blue); transform:translateY(-2px);}
+  .topic-icon{
+    width:44px; height:44px;
+    border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .topic-card h3{font-size:15px; font-weight:600;}
+  .topic-card span{font-size:13px; color:var(--text-dim); line-height:1.5;}
+
+  .layout{
+    max-width:1180px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:64px;
+    padding:48px 40px 120px;
+    border-top:1px solid var(--line);
+    margin-top:48px;
+  }
+
+  nav.toc{
+    position:sticky;
+    top:32px;
+    align-self:start;
+    font-size:15px;
+    padding-top:40px;
+  }
+  nav.toc ol{list-style:none;}
+  nav.toc li{margin-bottom:2px;}
+  nav.toc a{
+    color:var(--text-dim);
+    text-decoration:none;
+    display:block;
+    padding:10px 14px;
+    border-radius:8px;
+  }
+  nav.toc a:hover{background:var(--bg-soft); color:var(--text);}
+  nav.toc a.active{background:var(--bg-soft); color:var(--blue-deep); font-weight:600;}
+
+  main{max-width:700px; padding-top:40px;}
+  section{
+    padding-bottom:48px;
+    margin-bottom:48px;
+    border-bottom:1px solid var(--line);
+  }
+  section:last-child{border-bottom:none;}
+  section h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:26px;
+    font-weight:600;
+    margin-bottom:16px;
+  }
+  section h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:17px;
+    font-weight:600;
+    margin:24px 0 10px;
+  }
+  section p{color:#3A3D47; margin-bottom:14px; font-size:16px;}
+  section p:last-child{margin-bottom:0;}
+  section ul{margin:14px 0; padding-left:0; list-style:none;}
+  section li{
+    color:#3A3D47;
+    padding-left:24px;
+    position:relative;
+    margin-bottom:12px;
+    font-size:16px;
+  }
+  section li::before{
+    content:"";
+    position:absolute;
+    left:0; top:9px;
+    width:8px; height:8px;
+    border-radius:2px;
+    background:var(--blue);
+  }
+  section li b, section p b{color:var(--text); font-weight:600;}
+
+  .inline-illustration{
+    margin:0 0 40px;
+    border-radius:20px;
+    overflow:hidden;
+  }
+  .inline-illustration svg{width:100%; height:auto; display:block;}
+
+  .contact-card{
+    margin-top:8px;
+    padding:24px;
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    border-radius:12px;
+  }
+  .contact-card a{font-weight:600;}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;}
+  @media(max-width:520px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-grid div{font-size:14px;}
+  .contact-grid div b{display:block; color:var(--text); margin-bottom:4px;}
+
+  footer{
+    max-width:1180px;
+    margin:0 auto;
+    padding:32px 40px;
+    color:var(--text-dim);
+    font-size:13px;
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:860px){
+    .layout{grid-template-columns:1fr; gap:24px; padding:32px 24px 80px;}
+    nav.toc{position:static; padding-top:16px; border-bottom:1px solid var(--line); padding-bottom:16px;}
+    header.hero{padding:56px 24px 40px;}
+    header.topbar{padding:20px 24px;}
+    .topics{padding:40px 24px 8px;}
+    .banner{padding:0 24px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="logo" href="https://skiix.app">Skiix</a>
+</header>
+
+<header class="hero">
+  <div class="kicker">SKIIX · LEGAL</div>
+  <h1>Terms of <span class="highlight">Use</span></h1>
+  <p class="hero-sub">The ground rules for using Skiix, written the way we'd actually explain them to you in person.</p>
+  <div class="hero-meta">
+    <span>Applies to <b>skiix.app</b> and the Skiix app</span>
+  </div>
+</header>
+
+<div class="banner">
+  <div class="banner-inner">
+    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+      <rect x="50" y="50" width="140" height="100" rx="18" fill="#DCE7FF"/>
+      <circle cx="120" cy="100" r="26" fill="#5B8FFF"/>
+      <path d="M108 100l8 8 16-18" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="460" y="40" width="140" height="100" rx="18" fill="#FFF3E9"/>
+      <rect x="495" y="65" width="70" height="50" rx="8" fill="#F2A73B"/>
+      <rect x="510" y="80" width="40" height="8" rx="4" fill="#fff"/>
+      <rect x="510" y="94" width="26" height="8" rx="4" fill="#fff"/>
+      <rect x="70" y="190" width="130" height="86" rx="18" fill="#EFFBF5"/>
+      <circle cx="135" cy="233" r="26" fill="#38B27A"/>
+      <path d="M135 220v14l10 8" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <rect x="440" y="190" width="150" height="90" rx="18" fill="#F4EBFF"/>
+      <circle cx="480" cy="220" r="14" fill="#9B6BFF"/>
+      <circle cx="510" cy="220" r="14" fill="#C6ABFF"/>
+      <rect x="465" y="248" width="70" height="8" rx="4" fill="#DFCEFC"/>
+      <g>
+        <rect x="230" y="70" width="180" height="200" rx="26" fill="#EEF3FF" stroke="#DCE4FA" stroke-width="2"/>
+        <rect x="258" y="100" width="124" height="20" rx="6" fill="#5B8FFF"/>
+        <rect x="258" y="132" width="124" height="10" rx="5" fill="#C6D4FA"/>
+        <rect x="258" y="150" width="100" height="10" rx="5" fill="#C6D4FA"/>
+        <rect x="258" y="168" width="110" height="10" rx="5" fill="#C6D4FA"/>
+        <rect x="258" y="200" width="60" height="30" rx="8" fill="#5B8FFF"/>
+        <path d="M278 214l6 6 12-12" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <circle cx="70" cy="70" r="5" fill="#5B8FFF" opacity="0.5"/>
+      <circle cx="570" cy="160" r="5" fill="#38B27A" opacity="0.5"/>
+      <circle cx="210" cy="255" r="5" fill="#F2A73B" opacity="0.6"/>
+      <circle cx="450" cy="70" r="5" fill="#9B6BFF" opacity="0.6"/>
+    </svg>
+  </div>
+</div>
+
+<div class="topics">
+  <h2>What's in here</h2>
+  <p class="lead">Jump straight to the part you're wondering about.</p>
+  <div class="topic-grid">
+    <a class="topic-card" href="#your-account">
+      <div class="topic-icon" style="background:#DCE7FF">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#3E6FE0" stroke-width="2"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#3E6FE0" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Your account</h3>
+      <span>Who can sign up and what's expected of you.</span>
+    </a>
+    <a class="topic-card" href="#your-content">
+      <div class="topic-icon" style="background:#E4F7ED">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#38B27A" stroke-width="2"/><path d="M8 10h8M8 14h5" stroke="#38B27A" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Your content</h3>
+      <span>Who owns what you post and what we can do with it.</span>
+    </a>
+    <a class="topic-card" href="#guidelines">
+      <div class="topic-icon" style="background:#F4EBFF">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#9B6BFF" stroke-width="2"/><path d="M12 8v4l3 2" stroke="#9B6BFF" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Community guidelines</h3>
+      <span>What's not okay to post or do on Skiix.</span>
+    </a>
+    <a class="topic-card" href="#termination">
+      <div class="topic-icon" style="background:#FFE7EA">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#E0576B" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h3>Termination</h3>
+      <span>Leaving Skiix, or having your account closed.</span>
+    </a>
+    <a class="topic-card" href="#disputes">
+      <div class="topic-icon" style="background:#E4F4FB">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 21h16M6 21V9l6-5 6 5v12" stroke="#2CA9CF" stroke-width="2" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Disputes &amp; liability</h3>
+      <span>What happens if something goes wrong.</span>
+    </a>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="toc">
+    <ol>
+      <li><a href="#the-service">The service</a></li>
+      <li><a href="#your-account">Your account</a></li>
+      <li><a href="#your-content">Your content</a></li>
+      <li><a href="#acceptable-use">Acceptable use</a></li>
+      <li><a href="#guidelines">Community guidelines</a></li>
+      <li><a href="#intellectual-property">Intellectual property</a></li>
+      <li><a href="#third-party">Third-party services</a></li>
+      <li><a href="#termination">Termination</a></li>
+      <li><a href="#disclaimers">Disclaimers</a></li>
+      <li><a href="#disputes">Disputes &amp; liability</a></li>
+      <li><a href="#governing-law">Governing law</a></li>
+      <li><a href="#changes">Changes to these terms</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="the-service">
+      <h2>The service</h2>
+      <p>Skiix is a mood-based social platform built for real, intentional use instead of endless scrolling. It includes features like mood tags, the Vibe Slider, Focus Mode, and Discovery Shuffle, all designed to put you in control of how you spend time on the app rather than pulling you in.</p>
+      <p>We're still building and improving Skiix, so features may change, get added, or get retired over time. By creating an account or using Skiix in any way, you're agreeing to these Terms. If you don't agree with them, please don't use the app.</p>
+    </section>
+
+    <div class="inline-illustration">
+      <svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="30" width="220" height="160" rx="20" fill="#F5F7FF" stroke="#E7E9F0" stroke-width="2"/>
+        <circle cx="90" cy="80" r="18" fill="#5B8FFF"/>
+        <rect x="120" y="70" width="100" height="10" rx="5" fill="#DCE4FA"/>
+        <rect x="120" y="88" width="70" height="10" rx="5" fill="#DCE4FA"/>
+        <rect x="50" y="120" width="170" height="12" rx="6" fill="#EAF0FF"/>
+        <rect x="50" y="142" width="130" height="12" rx="6" fill="#EAF0FF"/>
+        <rect x="50" y="164" width="150" height="12" rx="6" fill="#EAF0FF"/>
+        <rect x="310" y="30" width="220" height="160" rx="20" fill="#FFF3E9" stroke="#F5E3D0" stroke-width="2"/>
+        <circle cx="420" cy="110" r="42" fill="#F2A73B"/>
+        <rect x="400" y="95" width="40" height="30" rx="4" fill="#fff"/>
+        <rect x="365" y="165" width="110" height="10" rx="5" fill="#F6DDB6"/>
+      </svg>
+    </div>
+
+    <section id="your-account">
+      <h2>Your account</h2>
+      <p>To use Skiix, there are a few basics we ask of you.</p>
+      <ul>
+        <li>You need to be at least 13 years old, or the minimum age required in your country if that's higher.</li>
+        <li>Keep your login credentials private and secure. You're responsible for whatever happens under your account.</li>
+        <li>Give us accurate information when you sign up, and keep it up to date.</li>
+        <li>Stick to one account per person. No impersonation, no fake profiles, no bots pretending to be human.</li>
+        <li>Tell us right away if you think someone else has gotten into your account.</li>
+      </ul>
+    </section>
+
+    <section id="your-content">
+      <h2>Your content</h2>
+      <p>Everything you post on Skiix, your photos, videos, captions, comments, and messages, belongs to you. We're not claiming ownership over any of it.</p>
+      <p>What we do need is a limited license: by posting, you're giving Skiix permission to host, store, and display your content within the app so we can actually run the service and show your posts to the people you're sharing with. That license ends when you delete the content or your account, aside from copies that may briefly remain in backups.</p>
+      <p>You're responsible for what you post. Please don't share anything that infringes someone else's rights, breaks the law, or goes against our Community Guidelines. If content crosses those lines, we may remove it, sometimes without advance notice.</p>
+    </section>
+
+    <section id="acceptable-use">
+      <h2>Acceptable use</h2>
+      <p>Skiix is meant to be a space people actually want to be in. To keep it that way, you agree not to:</p>
+      <ul>
+        <li>Use the app for anything illegal, fraudulent, or harmful to others.</li>
+        <li>Try to hack, reverse-engineer, scrape, or otherwise interfere with how Skiix works.</li>
+        <li>Upload viruses, malware, or anything designed to damage or disrupt the platform.</li>
+        <li>Create multiple accounts to evade a ban or manipulate engagement.</li>
+        <li>Use automated tools or bots to interact with the app without our permission.</li>
+      </ul>
+    </section>
+
+    <section id="guidelines">
+      <h2>Community guidelines</h2>
+      <p>Being part of Skiix means agreeing not to:</p>
+      <ul>
+        <li>Harass, bully, threaten, or intimidate other users.</li>
+        <li>Post hate speech, violent content, or anything that promotes harm against a person or group.</li>
+        <li>Spam, or use bots and fake engagement to manipulate the platform.</li>
+        <li>Share someone else's private information without their consent.</li>
+        <li>Post sexually explicit content involving minors, which we report to the relevant authorities without exception.</li>
+      </ul>
+      <p>Breaking these guidelines can lead to content removal, a temporary suspension, or losing your account entirely, depending on how serious the violation is.</p>
+    </section>
+
+    <section id="intellectual-property">
+      <h2>Intellectual property</h2>
+      <p>The Skiix name, logo, app design, and underlying software belong to Skiix. You're welcome to use the app as intended, but you don't get any rights to our branding, code, or design beyond that.</p>
+      <p>If you believe something on Skiix infringes your copyright or trademark, reach out to us at the contact details below and we'll look into it.</p>
+    </section>
+
+    <section id="third-party">
+      <h2>Third-party services</h2>
+      <p>Skiix relies on outside services to run smoothly, including Firebase for authentication, Supabase for our database, Cloudinary for media hosting, and Resend for email delivery. Your use of Skiix means you're also subject to the relevant terms of these providers where they apply to how your data is processed.</p>
+      <p>Posts on Skiix may also link out to other websites. We're not responsible for what happens once you leave the app.</p>
+    </section>
+
+    <section id="termination">
+      <h2>Termination</h2>
+      <p>You're free to delete your account whenever you want, no explanation needed.</p>
+      <p>We may suspend or terminate your account if you violate these Terms, our Community Guidelines, or put other users or the platform at risk. Where possible, we'll try to give you a heads-up first, but in serious cases, like fraud, abuse, or illegal activity, we may act immediately without warning.</p>
+    </section>
+
+    <div class="inline-illustration">
+      <svg viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="30" width="440" height="140" rx="20" fill="#F4EBFF" stroke="#E7DCFA" stroke-width="2"/>
+        <circle cx="150" cy="100" r="34" fill="#9B6BFF"/>
+        <path d="M138 100l8 8 16-16" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="220" y="70" width="220" height="12" rx="6" fill="#DFCEFC"/>
+        <rect x="220" y="94" width="180" height="12" rx="6" fill="#DFCEFC"/>
+        <rect x="220" y="118" width="200" height="12" rx="6" fill="#DFCEFC"/>
+      </svg>
+    </div>
+
+    <section id="disclaimers">
+      <h2>Disclaimers</h2>
+      <p>Skiix is provided as it is. We work hard to keep the app fast, stable, and useful, but we can't promise it will always be free of bugs or interruptions. We're also not responsible for content posted by other users, even though we do our best to enforce our guidelines and remove what violates them.</p>
+    </section>
+
+    <section id="disputes">
+      <h2>Disputes &amp; liability</h2>
+      <p>As far as the law allows, Skiix isn't liable for indirect or incidental damages that come from using the app. If a claim against us ever holds up, our liability is capped at whatever you've paid us, if anything, in the past twelve months.</p>
+      <p>If a dispute comes up between you and Skiix, we'd genuinely rather resolve it directly. Reach out to us first using the contact details below before pursuing any formal legal action.</p>
+    </section>
+
+    <section id="governing-law">
+      <h2>Governing law</h2>
+      <p>These Terms are governed by the laws of Pakistan. If your country's consumer protection laws give you rights that can't be signed away, those still apply to you no matter what these Terms say.</p>
+    </section>
+
+    <section id="changes">
+      <h2>Changes to these terms</h2>
+      <p>Skiix is still growing, and these Terms will grow with it. When we make material changes, we'll let you know through the app or by email. Continuing to use Skiix after an update means you accept the revised Terms.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact us</h2>
+      <p>Questions about these Terms, or anything else?</p>
+      <div class="contact-card">
+        <div class="contact-grid">
+          <div><b>Legal questions</b><a href="mailto:legal@skiix.app">legal@skiix.app</a></div>
+          <div><b>General support</b><a href="mailto:support@skiix.app">support@skiix.app</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>Skiix © 2026</footer>
+
+<script>
+  const links = document.querySelectorAll('nav.toc a');
+  const sections = document.querySelectorAll('main section');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const link = document.querySelector(`nav.toc a[href="#${e.target.id}"]`);
+      if(e.isIntersecting){
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => obs.observe(s));
+</script>
+
+</body>
+</html>
